@@ -1,0 +1,74 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "API 문서",
+    "description" : "fujifilmrecipes swagger docs",
+    "version" : "0.0.1"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080"
+  } ],
+  "tags" : [ ],
+  "paths" : {
+    "/posts" : {
+      "post" : {
+        "tags" : [ "Post API" ],
+        "summary" : "포스트 등록 API",
+        "description" : "포스트 등록 API",
+        "operationId" : "post-controller-test/test3",
+        "requestBody" : {
+          "content" : {
+            "application/json;charset=UTF-8" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/posts791014342"
+              },
+              "examples" : {
+                "post-controller-test/test3" : {
+                  "value" : "{\n  \"title\" : \"제목입니다.\",\n  \"content\" : \"글 내용입니다\"\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/posts486549215"
+                },
+                "examples" : {
+                  "post-controller-test/test3" : {
+                    "value" : "{ }"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "posts791014342" : {
+        "required" : [ "content", "title" ],
+        "type" : "object",
+        "properties" : {
+          "title" : {
+            "type" : "string",
+            "description" : "제목"
+          },
+          "content" : {
+            "type" : "string",
+            "description" : "내용"
+          }
+        }
+      },
+      "posts486549215" : {
+        "type" : "object"
+      }
+    }
+  }
+}
